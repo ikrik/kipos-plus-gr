@@ -1,18 +1,54 @@
 <!doctype html>
-<html lang="en">
+<html lang="el">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kipos plus</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet"
+    <title>Κήπος Plus | Υπηρεσίες Κηπουρικής στην Αττική</title>
+    <meta
+      name="description"
+      content="Η Κήπος Plus προσφέρει υπηρεσίες κηπουρικής, κλαδεμάτων και συντήρησης κήπου σε όλη την Αττική. Επικοινωνήστε για δωρεάν εκτίμηση."
     />
+    <meta name="keywords" content="κηπουρική, συντήρηση κήπου, κλαδέματα, κούρεμα γκαζόν, διαμόρφωση κήπου, Αττική" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Κήπος Plus" />
+    <meta name="theme-color" content="#2e8a50" />
+
+    <meta property="og:locale" content="el_GR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Κήπος Plus" />
+    <meta property="og:title" content="Κήπος Plus | Υπηρεσίες Κηπουρικής στην Αττική" />
+    <meta
+      property="og:description"
+      content="Υπηρεσίες κηπουρικής και συντήρησης κήπου στην Αττική. Κλαδέματα, φροντίδα γκαζόν και ολοκληρωμένες λύσεις για τον κήπο σας."
+    />
+    <meta property="og:image" content="/assets/optimized/hero/hero-garden-w1440.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Κήπος Plus | Υπηρεσίες Κηπουρικής στην Αττική" />
+    <meta
+      name="twitter:description"
+      content="Κηπουρική, κλαδέματα και συντήρηση κήπου στην Αττική από την Κήπος Plus."
+    />
+    <meta name="twitter:image" content="/assets/optimized/hero/hero-garden-w1440.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LandscapingBusiness",
+        "name": "Κήπος Plus",
+        "alternateName": "Kipos Plus",
+        "description": "Υπηρεσίες κηπουρικής και συντήρησης κήπου στην Αττική.",
+        "telephone": "+306977580491",
+        "email": "adrkost@gmail.com",
+        "areaServed": "Αττική",
+        "image": "/assets/optimized/hero/hero-garden-w1440.jpg",
+        "url": "/",
+        "sameAs": ["https://facebook.com", "https://instagram.com"]
+      }
+    </script>
+    <link rel="preload" href="./fonts/web/ysabeau-office/ysabeau-office-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
-    <script type="module" src="./script.js"></script>
     <script defer src="https://unpkg.com/lucide@0.564.0/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
   </head>
   <body>
@@ -155,7 +191,7 @@
               <div class="carousel-track" id="carouselTrack">
                 <button
                   class="gallery-item"
-                  data-full-avif="./assets/optimized/gallery/service-1-w1280.avif 1280w, ./assets/optimized/gallery/full/service-1-w1920.avif 1920w"
+                  data-full-avif="./assets/optimized/gallery/full/service-1-w1280.avif 1280w, ./assets/optimized/gallery/full/service-1-w1920.avif 1920w"
                   data-full-webp="./assets/optimized/gallery/full/service-1-w1280.webp 1280w, ./assets/optimized/gallery/full/service-1-w1920.webp 1920w"
                   data-full-jpg="./assets/optimized/gallery/full/service-1-w1280.jpg 1280w, ./assets/optimized/gallery/full/service-1-w1920.jpg 1920w"
                 >
@@ -171,7 +207,7 @@
                       sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
                     />
                     <img
-                      src="./assets/optimized/gallery/thumb/kipos-service-1-w360.jpg"
+                      src="./assets/optimized/gallery/thumb/service-1-w360.jpg"
                       srcset="./assets/optimized/gallery/thumb/service-1-w360.jpg 360w, ./assets/optimized/gallery/thumb/service-1-w720.jpg 720w"
                       sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
                       alt="Garden project 1"
@@ -349,7 +385,7 @@
 
       <section id="contact" class="section contact">
         <div class="container">
-          <h2>Επικοινωνήστε μαζί μας</h2>
+          <h2>Επικοινωνία</h2>
           <p class="section-intro">Θέλετε να βελτιώσετε τον κήπο σας; Επικοινωνήστε μαζί μας για δωρεάν εκτίμηση.</p>
 
           <div class="contact-grid">
@@ -359,8 +395,8 @@
                   <i data-lucide="phone"></i>
                 </div>
                 <div>
-                  <h4>Τηλέφωνο</h4>
-                  <a href="tel:+15551234567">697 758-0491</a>
+                  <h3>Τηλέφωνο</h3>
+                  <a href="tel:+15551234567">697 758 0491</a>
                 </div>
               </div>
 
@@ -369,7 +405,7 @@
                   <i data-lucide="mail"></i>
                 </div>
                 <div>
-                  <h4>Email</h4>
+                  <h3>Email</h3>
                   <a href="mailto:adrkost@gmail.com">adrkost@gmail.com</a>
                 </div>
               </div>
@@ -379,7 +415,7 @@
                   <i data-lucide="map-pin"></i>
                 </div>
                 <div>
-                  <h4>Περιοχές κάλυψης</h4>
+                  <h3>Περιοχές κάλυψης</h3>
                   <p>Ολόκληρη η Αττική</p>
                 </div>
               </div>
@@ -445,5 +481,6 @@
       </picture>
     </dialog>
 
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
