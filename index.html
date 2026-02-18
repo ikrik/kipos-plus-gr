@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kipos plus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./script.js"></script>
+    <script defer src="https://unpkg.com/lucide@0.564.0/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="navbar container">
+        <a href="#top" class="brand" aria-label="Kipos plus home">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="./assets/optimized/logo/logo-w64.avif 64w, ./assets/optimized/logo/logo-w128.avif 128w"
+              sizes="64px"
+            />
+            <source
+              type="image/webp"
+              srcset="./assets/optimized/logo/logo-w64.webp 64w, ./assets/optimized/logo/logo-w128.webp 128w"
+              sizes="64px"
+            />
+            <img
+              src="./assets/optimized/logo/logo-w64.png"
+              srcset="./assets/optimized/logo/logo-w64.png 64w, ./assets/optimized/logo/logo-w128.png 128w"
+              sizes="64px"
+              width="64"
+              height="64"
+              alt="Κήπος Plus logo"
+              decoding="async"
+            />
+          </picture>
+          <span class="kipos">Κήπος</span> <span class="plus">+</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+
+        <ul class="nav-links" id="desktopNav">
+          <li><a href="#services">Υπηρεσίες</a></li>
+          <li><a href="#gallery">Φωτογραφίες</a></li>
+          <li><a href="#about">Σχετικά με μας</a></li>
+          <li><a href="#contact">Επικοινωνία</a></li>
+        </ul>
+
+        <a class="phone-link" href="tel:+306977580491"><i data-lucide="phone"></i><span class="num">697 758-0491</span></a>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="phone-link" href="tel:+306977580491"><i data-lucide="phone"></i><span class="num">697 758-0491</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              ./assets/optimized/hero/hero-garden-w960.avif 960w,
+              ./assets/optimized/hero/hero-garden-w1440.avif 1440w,
+              ./assets/optimized/hero/hero-garden-w1920.avif 1920w
+            "
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              ./assets/optimized/hero/hero-garden-w960.webp 960w,
+              ./assets/optimized/hero/hero-garden-w1440.webp 1440w,
+              ./assets/optimized/hero/hero-garden-w1920.webp 1920w
+            "
+            sizes="100vw"
+          />
+          <img
+            src="./assets/optimized/hero/hero-garden-w1440.jpg"
+            srcset="
+              ./assets/optimized/hero/hero-garden-w960.jpg 960w,
+              ./assets/optimized/hero/hero-garden-w1440.jpg 1440w,
+              ./assets/optimized/hero/hero-garden-w1920.jpg 1920w
+            "
+            sizes="100vw"
+            alt="Beautiful garden landscape"
+            class="hero-image"
+            width="1920"
+            height="1080"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+          <h1>Φροντίζουμε τον κήπο σας</h1>
+          <p>Προσφέρουμε ολοκληρωμένες υπηρεσίες κηπουρικής για να μετατρέψουμε τον εξωτερικό σας χώρο σε ένα όμορφο και λειτουργικό περιβάλλον</p>
+          <div class="hero-actions">
+            <a class="btn btn-hero" href="#contact">Επικοινωνία</a>
+            <a class="btn btn-hero-outline" href="#services">Υπηρεσίες</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section services">
+        <div class="container">
+          <h2>Οι Υπηρεσίες μας</h2>
+          <p class="section-intro">Προσφέρουμε πλήρη γκάμα υπηρεσιών κηπουρικής και διαμόρφωσης εξωτερικών χώρων, προσαρμοσμένων στις ανάγκες σας.</p>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="service-icon">
+                <i data-lucide="scissors"></i>
+              </div>
+              <h3>Κούρεμα &amp; Φροντίδα Γκαζόν</h3>
+              <p>Τακτικό κούρεμα και καθάρισμα άκρων για να διατηρείται το γκαζόν σας υγιές και περιποιημένο.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <i data-lucide="tree-pine"></i>
+              </div>
+              <h3>Σχεδιασμός Κήπου</h3>
+              <p>Σχεδιασμός κήπου σύμφωνα με τον χώρο σας, με φυτά, λουλούδια και διαδρόμους.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                 <i data-lucide="leaf"></i>
+              </div>
+              <h3>Κλαδέματα</h3>
+              <p>Επαγγελματικό κλάδεμα και συντήρηση σε δένδρα, φράκτες και θάμνους.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery">
+        <div class="container">
+          <h2>Η Δουλειά μας</h2>
+          <p class="section-intro">Δείγμα απο φωτογραφίες και εργασίες σε κήπους</p>
+
+          <div class="carousel-wrap">
+            <button class="carousel-btn" id="prevBtn" aria-label="Previous slide"><i data-lucide="arrow-left"></i></button>
+            <div class="carousel-window" id="carouselWindow">
+              <div class="carousel-track" id="carouselTrack">
+                <button
+                  class="gallery-item"
+                  data-full-avif="./assets/optimized/gallery/service-1-w1280.avif 1280w, ./assets/optimized/gallery/full/service-1-w1920.avif 1920w"
+                  data-full-webp="./assets/optimized/gallery/full/service-1-w1280.webp 1280w, ./assets/optimized/gallery/full/service-1-w1920.webp 1920w"
+                  data-full-jpg="./assets/optimized/gallery/full/service-1-w1280.jpg 1280w, ./assets/optimized/gallery/full/service-1-w1920.jpg 1920w"
+                >
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcset="./assets/optimized/gallery/thumb/service-1-w360.avif 360w, ./assets/optimized/gallery/thumb/service-1-w720.avif 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="./assets/optimized/gallery/thumb/service-1-w360.webp 360w, ./assets/optimized/gallery/thumb/service-1-w720.webp 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <img
+                      src="./assets/optimized/gallery/thumb/kipos-service-1-w360.jpg"
+                      srcset="./assets/optimized/gallery/thumb/service-1-w360.jpg 360w, ./assets/optimized/gallery/thumb/service-1-w720.jpg 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                      alt="Garden project 1"
+                      width="720"
+                      height="480"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </button>
+                <button
+                  class="gallery-item"
+                  data-full-avif="./assets/optimized/gallery/full/service-2-w1280.avif 1280w, ./assets/optimized/gallery/full/service-2-w1920.avif 1920w"
+                  data-full-webp="./assets/optimized/gallery/full/service-2-w1280.webp 1280w, ./assets/optimized/gallery/full/service-2-w1920.webp 1920w"
+                  data-full-jpg="./assets/optimized/gallery/full/service-2-w1280.jpg 1280w, ./assets/optimized/gallery/full/service-2-w1920.jpg 1920w"
+                >
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcset="./assets/optimized/gallery/thumb/service-2-w360.avif 360w, ./assets/optimized/gallery/thumb/service-2-w720.avif 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="./assets/optimized/gallery/thumb/service-2-w360.webp 360w, ./assets/optimized/gallery/thumb/service-2-w720.webp 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <img
+                      src="./assets/optimized/gallery/thumb/service-2-w360.jpg"
+                      srcset="./assets/optimized/gallery/thumb/service-2-w360.jpg 360w, ./assets/optimized/gallery/thumb/service-2-w720.jpg 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                      alt="Garden project 2"
+                      width="720"
+                      height="480"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </button>             
+                <button
+                  class="gallery-item"
+                  data-full-avif="./assets/optimized/gallery/full/service-3-w1280.avif 1280w, ./assets/optimized/gallery/full/service-3-w1920.avif 1920w"
+                  data-full-webp="./assets/optimized/gallery/full/service-3-w1280.webp 1280w, ./assets/optimized/gallery/full/service-3-w1920.webp 1920w"
+                  data-full-jpg="./assets/optimized/gallery/full/service-3-w1280.jpg 1280w, ./assets/optimized/gallery/full/service-3-w1920.jpg 1920w"
+                >
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcset="./assets/optimized/gallery/thumb/service-3-w360.avif 360w, ./assets/optimized/gallery/thumb/service-3-w720.avif 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="./assets/optimized/gallery/thumb/service-3-w360.webp 360w, ./assets/optimized/gallery/thumb/service-3-w720.webp 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <img
+                      src="./assets/optimized/gallery/thumb/service-3-w360.jpg"
+                      srcset="./assets/optimized/gallery/thumb/service-3-w360.jpg 360w, ./assets/optimized/gallery/thumb/service-3-w720.jpg 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                      alt="Garden project 3"
+                      width="720"
+                      height="960"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </button>
+                <button
+                  class="gallery-item"
+                  data-full-avif="./assets/optimized/gallery/full/service-4-w1280.avif 1280w, ./assets/optimized/gallery/full/service-4-w1920.avif 1920w"
+                  data-full-webp="./assets/optimized/gallery/full/service-4-w1280.webp 1280w, ./assets/optimized/gallery/full/service-4-w1920.webp 1920w"
+                  data-full-jpg="./assets/optimized/gallery/full/service-4-w1280.jpg 1280w, ./assets/optimized/gallery/full/service-4-w1920.jpg 1920w"
+                >
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcset="./assets/optimized/gallery/thumb/service-4-w360.avif 360w, ./assets/optimized/gallery/thumb/service-4-w720.avif 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="./assets/optimized/gallery/thumb/service-4-w360.webp 360w, ./assets/optimized/gallery/thumb/service-4-w720.webp 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <img
+                      src="./assets/optimized/gallery/thumb/service-4-w360.jpg"
+                      srcset="./assets/optimized/gallery/thumb/service-4-w360.jpg 360w, ./assets/optimized/gallery/thumb/service-4-w720.jpg 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                      alt="Garden project 4"
+                      width="640"
+                      height="640"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </button>
+                <button
+                  class="gallery-item"
+                  data-full-avif="./assets/optimized/gallery/full/service-5-w1280.avif 1280w, ./assets/optimized/gallery/full/service-5-w1920.avif 1920w"
+                  data-full-webp="./assets/optimized/gallery/full/service-5-w1280.webp 1280w, ./assets/optimized/gallery/full/service-5-w1920.webp 1920w"
+                  data-full-jpg="./assets/optimized/gallery/full/service-5-w1280.jpg 1280w, ./assets/optimized/gallery/full/service-5-w1920.jpg 1920w"
+                >
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcset="./assets/optimized/gallery/thumb/service-5-w360.avif 360w, ./assets/optimized/gallery/thumb/service-5-w720.avif 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="./assets/optimized/gallery/thumb/service-5-w360.webp 360w, ./assets/optimized/gallery/thumb/service-5-w720.webp 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <img
+                      src="./assets/optimized/gallery/thumb/service-5-w360.jpg"
+                      srcset="./assets/optimized/gallery/thumb/service-5-w360.jpg 360w, ./assets/optimized/gallery/thumb/service-5-w720.jpg 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                      alt="Garden project 5"
+                      width="720"
+                      height="960"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </button>
+                 <button
+                  class="gallery-item"
+                  data-full-avif="./assets/optimized/gallery/full/service-6-w1280.avif 1280w, ./assets/optimized/gallery/full/service-6-w1920.avif 1920w"
+                  data-full-webp="./assets/optimized/gallery/full/service-6-w1280.webp 1280w, ./assets/optimized/gallery/full/service-6-w1920.webp 1920w"
+                  data-full-jpg="./assets/optimized/gallery/full/service-6-w1280.jpg 1280w, ./assets/optimized/gallery/full/service-6-w1920.jpg 1920w"
+                >
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcset="./assets/optimized/gallery/thumb/service-6-w360.avif 360w, ./assets/optimized/gallery/thumb/service-6-w720.avif 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="./assets/optimized/gallery/thumb/service-6-w360.webp 360w, ./assets/optimized/gallery/thumb/service-6-w720.webp 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                    />
+                    <img
+                      src="./assets/optimized/gallery/thumb/service-6-w360.jpg"
+                      srcset="./assets/optimized/gallery/thumb/service-6-w360.jpg 360w, ./assets/optimized/gallery/thumb/service-6-w720.jpg 720w"
+                      sizes="(max-width: 760px) calc(100vw - 3rem), (max-width: 900px) calc((100vw - 5rem) / 2), 300px"
+                      alt="Garden project 6"
+                      width="640"
+                      height="640"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </button>
+                
+              </div>
+            </div>
+            <button class="carousel-btn" id="nextBtn" aria-label="Next slide"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container narrow">
+          <h2>Σχετικά με μας</h2>
+          <p>
+            Η Κήπος Plus αναλαμβάνει εργασίες κηπουρικής για σπίτια και επαγγελματικούς χώρους, με στόχο έναν καθαρό και περιποιημένο εξωτερικό χώρο. Δίνουμε σημασία στη σωστή φροντίδα των φυτών και στη λεπτομέρεια σε κάθε δουλειά.
+          </p>
+          <p>
+            Αναλαμβάνουμε από απλή συντήρηση κήπου και γκαζόν μέχρι πιο ολοκληρωμένες εργασίες, πάντα με υπευθυνότητα και συνέπεια.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2>Επικοινωνήστε μαζί μας</h2>
+          <p class="section-intro">Θέλετε να βελτιώσετε τον κήπο σας; Επικοινωνήστε μαζί μας για δωρεάν εκτίμηση.</p>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="badge">
+                  <i data-lucide="phone"></i>
+                </div>
+                <div>
+                  <h4>Τηλέφωνο</h4>
+                  <a href="tel:+15551234567">697 758-0491</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="badge">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <a href="mailto:adrkost@gmail.com">adrkost@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="badge">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <h4>Περιοχές κάλυψης</h4>
+                  <p>Ολόκληρη η Αττική</p>
+                </div>
+              </div>
+
+              <div class="socials">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <i data-lucide="instagram"></i>
+                </a>
+              </div>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+              <input type="text" name="name" placeholder="Το Όνομα σου" required />
+              <input type="email" name="email" placeholder="Το Email σου" required />
+              <textarea name="message" rows="4" placeholder="Πες μας για τον κήπο σου και τις ανάγκες του..." required></textarea>
+              <button type="submit" class="btn btn-primary">Στείλε το μήνυμά σου</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-brand"> 
+          <picture>
+            <source
+              type="image/avif"
+              srcset="./assets/optimized/logo/logo-w44.avif 44w, ./assets/optimized/logo/logo-w88.avif 88w"
+              sizes="44px"
+            />
+            <source
+              type="image/webp"
+              srcset="./assets/optimized/logo/logo-w44.webp 44w, ./assets/optimized/logo/logo-w88.webp 88w"
+              sizes="44px"
+            />
+            <img
+              src="./assets/optimized/logo/logo-w44.png"
+              srcset="./assets/optimized/logo/logo-w44.png 44w, ./assets/optimized/logo/logo-w88.png 88w"
+              sizes="44px"
+              width="44"
+              height="44"
+              alt="Κήπος Plus logo"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <span class="kipos">Κήπος</span> <span class="plus">+</span>
+        </div>
+        <p>© 2026 Κήπος plus. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <dialog id="imageModal" class="image-modal">
+      <button id="modalClose" class="modal-close" aria-label="Close">x</button>
+      <picture>
+        <source id="modalImageAvif" type="image/avif" />
+        <source id="modalImageWebp" type="image/webp" />
+        <img id="modalImage" src="" alt="Gallery preview" decoding="async" />
+      </picture>
+    </dialog>
+
+  </body>
+</html>

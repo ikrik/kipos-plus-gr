@@ -1,0 +1,20 @@
+{
+  "name": "garden-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing site for Kipos Plus",
+  "scripts": {
+    "dev": "vite",
+    "optimize:images": "node ./scripts/optimize-images.mjs",
+    "build": "vite build",
+    "build:prod": "npm run optimize:images && npm run build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.34.5",
+    "vite": "^7.3.1"
+  }
+}
