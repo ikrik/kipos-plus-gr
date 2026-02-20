@@ -76,23 +76,33 @@ async function handleContactRequest(request, env) {
     message
   ].join("\n");
 
-  const emailResponse = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      from: env.MAIL_FROM,
-      to: [env.CONTACT_TO],
-      reply_to: email,
-      subject,
-      text
-    })
-  });
+  let emailResponse;
+  try {
+    emailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        from: env.MAIL_FROM,
+        to: [env.CONTACT_TO],
+        reply_to: email,
+        subject,
+        text
+      })
+    });
+  } catch (error) {
+    console.error("Resend request failed", error);
+    return json({ ok: false, error: "Mail provider request failed" }, 502);
+  }
 
   if (!emailResponse.ok) {
     const details = await emailResponse.text();
+    console.error("Resend API rejected request", {
+      status: emailResponse.status,
+      details
+    });
     return json({ ok: false, error: "Failed to send email", details }, 502);
   }
 

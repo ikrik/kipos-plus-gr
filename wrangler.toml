@@ -7,5 +7,6 @@ directory = "./dist"
 binding = "ASSETS"
 
 [vars]
+RESEND_API_KEY = "re_4czzSTQA_6KYS1uV5ezemMLn8EurSPJ8j"
 CONTACT_TO = "gregtsakma@gmail.com"
 MAIL_FROM = "Kipos Plus <onboarding@resend.dev>"

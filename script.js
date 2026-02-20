@@ -112,6 +112,10 @@ imageModal?.addEventListener("click", (event) => {
 });
 
 const contactForm = document.getElementById("contactForm");
+const isLocalhost =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1" ||
+  window.location.hostname === "::1";
 
 contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -141,15 +145,29 @@ contactForm?.addEventListener("submit", async (event) => {
       body: JSON.stringify(payload)
     });
 
+    const responseBody = await response.json().catch(() => null);
+
     if (!response.ok) {
-      throw new Error("Failed to send contact form");
+      const errorMessage =
+        responseBody && typeof responseBody.error === "string"
+          ? responseBody.error
+          : `HTTP ${response.status}`;
+      const detailMessage =
+        responseBody && typeof responseBody.details === "string"
+          ? ` | Details: ${responseBody.details}`
+          : "";
+      throw new Error(`${errorMessage}${isLocalhost ? detailMessage : ""}`);
     }
 
     alert("Το μήνυμα στάλθηκε επιτυχώς. Θα επικοινωνήσουμε σύντομα μαζί σας.");
     contactForm.reset();
   } catch (error) {
-    console.error(error);
-    alert("Αποτυχία αποστολής. Παρακαλώ δοκιμάστε ξανά.");
+    console.error("Contact form submission failed:", error);
+    const message = error instanceof Error ? error.message : "Unknown error";
+    const alertMessage = isLocalhost
+      ? `Αποτυχία αποστολής: ${message}`
+      : "Αποτυχία αποστολής. Παρακαλώ δοκιμάστε ξανά.";
+    alert(alertMessage);
   } finally {
     if (submitButton instanceof HTMLButtonElement) {
       submitButton.disabled = false;
