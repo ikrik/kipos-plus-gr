@@ -8,4 +8,4 @@ binding = "ASSETS"
 
 [vars]
 CONTACT_TO = "adrkost@gmail.com"
-MAIL_FROM = "Kipos Plus <onboarding@resend.dev>"
+MAIL_FROM = "Κήπος Plus <noreply@kiposplus.gr>"

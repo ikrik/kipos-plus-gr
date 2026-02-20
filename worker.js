@@ -37,7 +37,7 @@ async function handleContactRequest(request, env) {
   if (request.method !== "POST") {
     return json({ ok: false, error: "Method not allowed" }, 405);
   }
-  console.log("has RESENT_API_KEY:", Boolean(env.RESENT_API_KEY));
+
   if (!env.RESENT_API_KEY || !env.CONTACT_TO || !env.MAIL_FROM) {
     return json({ ok: false, error: "Mail service is not configured" }, 500);
   }
@@ -67,7 +67,7 @@ async function handleContactRequest(request, env) {
 
   const subject = `Νέα επικοινωνία από ${name}`;
   const text = [
-    "Νέα φόρμα επικοινωνίας από το kipos-plus.gr",
+    "Νέα φόρμα επικοινωνίας από το kiposplus.gr",
     "",
     `Όνομα: ${name}`,
     `Email: ${email}`,
