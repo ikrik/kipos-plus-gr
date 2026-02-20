@@ -17,15 +17,15 @@ export default {
     }
 
     return response;
-  }
+  },
 };
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
-      "content-type": "application/json; charset=utf-8"
-    }
+      "content-type": "application/json; charset=utf-8",
+    },
   });
 }
 
@@ -73,7 +73,7 @@ async function handleContactRequest(request, env) {
     `Email: ${email}`,
     "",
     "Μήνυμα:",
-    message
+    message,
   ].join("\n");
 
   let emailResponse;
@@ -82,15 +82,15 @@ async function handleContactRequest(request, env) {
       method: "POST",
       headers: {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         from: env.MAIL_FROM,
         to: [env.CONTACT_TO],
         reply_to: email,
         subject,
-        text
-      })
+        text,
+      }),
     });
   } catch (error) {
     console.error("Resend request failed", error);
@@ -101,7 +101,7 @@ async function handleContactRequest(request, env) {
     const details = await emailResponse.text();
     console.error("Resend API rejected request", {
       status: emailResponse.status,
-      details
+      details,
     });
     return json({ ok: false, error: "Failed to send email", details }, 502);
   }
