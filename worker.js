@@ -37,7 +37,7 @@ async function handleContactRequest(request, env) {
   if (request.method !== "POST") {
     return json({ ok: false, error: "Method not allowed" }, 405);
   }
-
+  console.log("has RESEND_API_KEY:", Boolean(env.RESEND_API_KEY));
   if (!env.RESEND_API_KEY || !env.CONTACT_TO || !env.MAIL_FROM) {
     return json({ ok: false, error: "Mail service is not configured" }, 500);
   }
