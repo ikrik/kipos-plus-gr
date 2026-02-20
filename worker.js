@@ -37,8 +37,8 @@ async function handleContactRequest(request, env) {
   if (request.method !== "POST") {
     return json({ ok: false, error: "Method not allowed" }, 405);
   }
-  console.log("has RESEND_API_KEY:", Boolean(env.RESEND_API_KEY));
-  if (!env.RESEND_API_KEY || !env.CONTACT_TO || !env.MAIL_FROM) {
+  console.log("has RESENT_API_KEY:", Boolean(env.RESENT_API_KEY));
+  if (!env.RESENT_API_KEY || !env.CONTACT_TO || !env.MAIL_FROM) {
     return json({ ok: false, error: "Mail service is not configured" }, 500);
   }
 
@@ -81,7 +81,7 @@ async function handleContactRequest(request, env) {
     emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        Authorization: `Bearer ${env.RESENT_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
