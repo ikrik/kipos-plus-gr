@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://kipos-plus.gr/sitemap.xml
+Host: kipos-plus.gr
