@@ -113,8 +113,47 @@ imageModal?.addEventListener("click", (event) => {
 
 const contactForm = document.getElementById("contactForm");
 
-contactForm?.addEventListener("submit", (event) => {
+contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
-  alert("Thank you! We'll get back to you soon.");
-  contactForm.reset();
+
+  if (!(contactForm instanceof HTMLFormElement)) return;
+
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton?.textContent ?? "";
+  if (submitButton instanceof HTMLButtonElement) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Αποστολή...";
+  }
+
+  try {
+    const formData = new FormData(contactForm);
+    const payload = {
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      message: String(formData.get("message") ?? "")
+    };
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to send contact form");
+    }
+
+    alert("Το μήνυμα στάλθηκε επιτυχώς. Θα επικοινωνήσουμε σύντομα μαζί σας.");
+    contactForm.reset();
+  } catch (error) {
+    console.error(error);
+    alert("Αποτυχία αποστολής. Παρακαλώ δοκιμάστε ξανά.");
+  } finally {
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+  }
 });
