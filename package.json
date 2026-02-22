@@ -1,8 +1,11 @@
 {
-  "name": "garden-site",
-  "version": "1.0.0",
+  "name": "kiposplus.gr",
+  "version": "2.0.0",
   "private": true,
   "description": "Static marketing site for Kipos Plus",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "vite",
     "optimize:images": "node ./scripts/optimize-images.mjs",
